@@ -81,8 +81,8 @@ it('can add the star name and star symbol properly', async() => {
     let tokenId = 10;
     let instance = await StarNotary.deployed();
     await instance.createStar('star2', tokenId, {from: accounts[0]});
-    assert.equal( await instance.TokenName.call(), "Start Token 1234");
-    assert.equal( await instance.TokenSymbol.call(), 'ST12');
+    assert.equal( await instance.name.call(), "Start Token 1234");
+    assert.equal( await instance.symbol.call(), 'ST12');
 });
 
 it('lets 2 users exchange stars', async() => {
